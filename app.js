@@ -17,3 +17,23 @@ function criaCartao(titulo, pergunta, resposta) {
 
     front.appendChild(tituloElem);
     front.appendChild(perguntaElem);
+
+    const back = document.createElement('div');
+    back.classList.add('cartao__conteudo__resposta');
+
+    const respostaElem = document.createElement('p');
+    respostaElem.textContent = resposta;
+
+    back.appendChild(respostaElem);
+
+    conteudo.appendChild(front);
+    conteudo.appendChild(back);
+
+    cartao.appendChild(conteudo);
+    container.appendChild(cartao);
+
+    cartao.addEventListener('click', () => {
+        cartao.classList.toggle('active');
+    });
+}
+
